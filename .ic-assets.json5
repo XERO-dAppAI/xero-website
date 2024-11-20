@@ -1,0 +1,11 @@
+{
+    "asset_canister": {
+        "asset_paths": [
+            {
+                "match": "**/*",
+                "serve": "out/$1",
+                "ignore": false
+            }
+        ]
+    }
+}

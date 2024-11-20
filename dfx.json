@@ -1,0 +1,24 @@
+{
+    "canisters": {
+        "xero_website": {
+            "frontend": {
+                "entrypoint": "out/index.html"
+            },
+            "source": ["out"],
+            "type": "assets"
+        }
+    },
+    "defaults": {
+        "build": {
+            "args": "",
+            "packtool": ""
+        }
+    },
+    "networks": {
+        "local": {
+            "bind": "127.0.0.1:4943",
+            "type": "ephemeral"
+        }
+    },
+    "version": 1
+}
