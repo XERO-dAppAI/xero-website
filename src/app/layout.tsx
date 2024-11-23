@@ -30,9 +30,9 @@ const raleway = Raleway({
 
 export const metadata: Metadata = {
 
-  title: "Light Saas Landing Page",
+  title: "XERO | Food Waste Management Platform",
 
-  description: "Template created by Frontend Tribe",
+  description: "Transform your business with AI-driven food waste management and blockchain transparency.",
 
 };
 
@@ -51,6 +51,12 @@ export default function RootLayout({
   return (
 
     <html lang="en" className="relative">
+
+      <head>
+
+        <link rel="icon" href="/favicon.ico" />
+
+      </head>
 
       <body className={twMerge(
 

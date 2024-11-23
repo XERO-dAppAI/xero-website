@@ -14,6 +14,11 @@ export const CallToAction = () => {
   });
 
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
+  const handleLearnMore = () => {
+    window.open('https://janice-mugure.gitbook.io/xero', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -23,8 +28,8 @@ export const CallToAction = () => {
         <div className="section-heading relative">
           <h2 className="section-title">Sign up for free today</h2>
           <p className="section-description mt-5">
-            Celebrate the joy of accomplishment with an app designed to track
-            your progress and motivate your efforts.
+            Join The Xero Community on all of our social media platforms
+            @Xero For more information
           </p>
           <motion.img
             src={starImage.src}
@@ -46,8 +51,18 @@ export const CallToAction = () => {
           />
         </div>
         <div className="flex gap-2 mt-10 justify-center">
-          <button className="btn btn-primary">Get for free</button>
-          <button className="btn btn-text gap-1">
+        <motion.button 
+                className="btn btn-primary"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.2 }}
+              >
+                <span>Follow Us On X</span>
+              </motion.button>
+          <button 
+            onClick={handleLearnMore}
+            className="btn btn-text gap-1 hover:text-[#666ed2] transition-colors px-6 py-3"
+          >
             <span>Learn more</span>
             <ArrowRight className="h-5 w-5" />
           </button>

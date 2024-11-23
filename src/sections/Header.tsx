@@ -13,10 +13,7 @@ export const Header = () => {
             <Image src={Logo} alt="Saas Logo" height={40} width={40} />
             <MenuIcon className="h-5 w-5 md:hidden" />
             <nav className="hidden md:flex gap-6 text-black/60 items-center">
-              <a href="#" className="hover:text-black transition-colors">Features</a>
-              <a href="#" className="hover:text-black transition-colors">Customers</a>
-              <a href="#" className="hover:text-black transition-colors">Updates</a>
-              <a href="#" className="hover:text-black transition-colors">Help</a>
+             
               <button className="btn btn-dark">
                 <span>Get for free</span>
               </button>

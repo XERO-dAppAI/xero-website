@@ -26,6 +26,10 @@ export const Hero = () => {
   });
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
 
+  const handleWhitepaper = () => {
+    window.open('https://janice-mugure.gitbook.io/xero', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section
       ref={heroRef}
@@ -94,6 +98,7 @@ export const Hero = () => {
                 whileHover={{ x: 5 }}
                 whileTap={{ x: 2 }}
                 transition={{ duration: 0.2 }}
+                onClick={handleWhitepaper}
               >
                 <span>Whitepaper</span>
                 <motion.div

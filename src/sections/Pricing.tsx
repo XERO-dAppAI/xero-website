@@ -102,7 +102,6 @@ export const Pricing = () => {
       <div className="container">
         <div className="section-heading">
           <div className="flex justify-center">
-            <div className="tag">Pricing</div>
             <div className="tag">Our Pricing</div>
           </div>
           <h2 className="section-title mt-8">Choose Your Plan</h2>
@@ -192,7 +191,10 @@ export const Pricing = () => {
                   />
                 </span>
                 {monthlyPrice && (
-                  <span className="tracking-tight font-bold text-black/50">
+                  <span className={twMerge(
+                    "tracking-tight font-bold text-black/50",
+                    inverse === true && "text-white"
+                  )}>
                     /{isYearly ? 'year' : 'month'}
                   </span>
                 )}
