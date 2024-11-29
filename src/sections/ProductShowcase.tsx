@@ -134,7 +134,7 @@ export const ProductShowcase = () => {
 
               whileTap={{ scale: 0.95 }}
 
-              onClick={() => setIsPlaying(!isPlaying)}
+              onClick={() => window.open('https://youtu.be/JchV9uSk1Bo', '_blank', 'noopener,noreferrer')}
 
             >
 

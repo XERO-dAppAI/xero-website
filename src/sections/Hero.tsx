@@ -6,6 +6,7 @@ import noodleImage from "@/assets/noodle.png";
 import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { useAuth } from "@/context/AuthContext";
 
 export const Hero = () => {
   const words = ["Efficiency", "Innovation", "Sustainability", "Growth"];
@@ -27,13 +28,19 @@ export const Hero = () => {
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
 
   const handleWhitepaper = () => {
-    window.open('https://janice-mugure.gitbook.io/xero', '_blank', 'noopener,noreferrer');
+    window.open('https://slklx-vqaaa-aaaaj-qnexq-cai.icp0.io/', '_blank', 'noopener,noreferrer');
+  };
+
+  const { login, isAuthenticated, isLoading } = useAuth();
+
+  const handleGetStarted = () => {
+    window.open('https://slklx-vqaaa-aaaaj-qnexq-cai.icp0.io/', '_blank', 'noopener,noreferrer');
   };
 
   return (
     <section
       ref={heroRef}
-      className="pt-8 pb-20 md:pt-5 md:pb-10 bg-gradient-to-br from-white via-[#F5F5FF] to-[#E8EBFF] overflow-x-clip"
+      className="pt-8 pb-20 md:pt-5 md:pb-10 bg-gradient-to-br from-white via-[#F5FFF5] to-[#E8FFE8] overflow-x-clip"
     >
       <div className="container">
         <div className="md:flex items-center">
@@ -58,7 +65,7 @@ export const Hero = () => {
                   <AnimatePresence mode="wait">
                     <motion.span
                       key={words[currentWordIndex]}
-                      className="block text-[#666ed2]"
+                      className="block text-[#062424]"
                       initial={{ y: "100%" }}
                       animate={{ y: 0 }}
                       exit={{ y: "-100%" }}
@@ -90,6 +97,7 @@ export const Hero = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}
+                onClick={() => window.open('https://slklx-vqaaa-aaaaj-qnexq-cai.icp0.io/', '_blank', 'noopener,noreferrer')}
               >
                 <span>Get Started</span>
               </motion.button>

@@ -16,7 +16,7 @@ export const CallToAction = () => {
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
 
   const handleLearnMore = () => {
-    window.open('https://janice-mugure.gitbook.io/xero', '_blank', 'noopener,noreferrer');
+    window.open('https://t.me/xerow_ai', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -51,14 +51,15 @@ export const CallToAction = () => {
           />
         </div>
         <div className="flex gap-2 mt-10 justify-center">
-        <motion.button 
-                className="btn btn-primary"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.2 }}
-              >
-                <span>Follow Us On X</span>
-              </motion.button>
+          <motion.button 
+            className="btn btn-primary"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => window.open('https://twitter.com/xerow_ai', '_blank', 'noopener,noreferrer')}
+          >
+            <span>Follow Us On X</span>
+          </motion.button>
           <button 
             onClick={handleLearnMore}
             className="btn btn-text gap-1 hover:text-[#666ed2] transition-colors px-6 py-3"

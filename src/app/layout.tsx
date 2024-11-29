@@ -6,6 +6,8 @@ import "./globals.css";
 
 import { twMerge } from "tailwind-merge";
 
+import { AuthProvider } from "@/context/AuthContext";
+
 
 
 const syne = Syne({ 
@@ -68,7 +70,11 @@ export default function RootLayout({
 
       )}>
 
-        {children}
+        <AuthProvider>
+
+          {children}
+
+        </AuthProvider>
 
       </body>
 

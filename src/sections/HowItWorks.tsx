@@ -2,7 +2,6 @@
 
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useState, useEffect } from "react";
-import { CustomCursor } from "@/components/CustomCursor";
 
 const HowItWorks = () => {
   const [activeNumber, setActiveNumber] = useState(1);
@@ -18,7 +17,7 @@ const HowItWorks = () => {
   const getNumberClass = (number: number) => {
     return `absolute right-8 bottom-6 text-[100px] font-bold leading-none transition-all duration-1000
       ${activeNumber === number 
-        ? 'text-[#666ed2] opacity-20 scale-110 drop-shadow-[0_0_30px_rgba(102,110,210,0.7)]' 
+        ? 'text-[#062424] opacity-20 scale-110 drop-shadow-[0_0_30px_rgba(6,36,36,0.7)]' 
         : 'text-[#666666]/[0.03]'
       }`;
   };
@@ -47,9 +46,8 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="bg-white py-24 relative cursor-none">
-      <CustomCursor />
-      <div className="container cursor-none">
+    <section className="bg-white py-24 relative">
+      <div className="container">
         <div className="section-heading">
           <div className="flex justify-center">
             <div className="tag">Process</div>

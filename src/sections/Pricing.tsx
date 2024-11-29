@@ -206,6 +206,7 @@ export const Pricing = () => {
                   "btn w-full mt-[30px]",
                   inverse === true ? "btn-pricing-highlight" : "btn-primary"
                 )}
+                onClick={() => window.open('https://slklx-vqaaa-aaaaj-qnexq-cai.icp0.io/', '_blank', 'noopener,noreferrer')}
               >
                 <span>{buttonText}</span>
               </motion.button>

@@ -1,6 +1,7 @@
 import { Header } from "@/sections/Header";
-import { Hero } from "@/sections/Hero";
+import { Xero } from "@/sections/xero";
 import { LogoTicker } from "@/sections/LogoTicker";
+import { Hero } from "@/sections/Hero";
 import { ProductShowcase } from "@/sections/ProductShowcase";
 import { Features } from "@/sections/Features";
 import { Pricing } from "@/sections/Pricing";
@@ -15,10 +16,11 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Hero />
+      <Xero />
       <LogoTicker />
-      <ProductShowcase />
       <Integrations />  
+      <Hero /> 
+      <ProductShowcase /> 
       <Pricing />
       <HowItWorks />
       <Features />
