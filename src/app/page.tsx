@@ -18,16 +18,16 @@ export default function Home() {
       <Header />
       <Xero />
       <LogoTicker />
-      <Integrations />  
-      <Hero /> 
-      <ProductShowcase /> 
-      <Pricing />
+      <Integrations /> 
       <HowItWorks />
+      <ProductShowcase /> 
       <Features />
+      <Pricing /> 
       <Analytics />
       <Testimonials />
       <CallToAction />
       <Footer />
+      <Hero /> 
     </>
   );
 }

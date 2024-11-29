@@ -8,8 +8,8 @@ import { useState, useEffect } from "react";
 const pricingTiers = [
   {
     title: "Starter",
-    monthlyPrice: 29,
-    yearlyPrice: 290,
+    monthlyPrice: 3,
+    yearlyPrice: 30,
     buttonText: "Start Your Journey",
     popular: false,
     inverse: false,
@@ -23,8 +23,8 @@ const pricingTiers = [
   },
   {
     title: "Growth",
-    monthlyPrice: 79,
-    yearlyPrice: 790,
+    monthlyPrice: 7,
+    yearlyPrice: 70,
     buttonText: "Scale With Us",
     popular: true,
     inverse: true,
@@ -40,8 +40,8 @@ const pricingTiers = [
   },
   {
     title: "Enterprise",
-    monthlyPrice: 199,
-    yearlyPrice: 1990,
+    monthlyPrice: 18,
+    yearlyPrice: 180,
     buttonText: "Transform Your Business",
     popular: false,
     inverse: false,
@@ -112,7 +112,7 @@ export const Pricing = () => {
           <div className="flex justify-center mt-8">
             <div className="bg-gray-100 p-1 rounded-full flex relative">
               <motion.div
-                className="absolute bg-[#2D2654] h-full rounded-full"
+                className="absolute bg-[#062424] h-full rounded-full"
                 initial={false}
                 animate={{
                   x: isYearly ? "100%" : "0%",
@@ -123,7 +123,7 @@ export const Pricing = () => {
               <button
                 onClick={() => setIsYearly(false)}
                 className={`relative z-10 px-8 py-2 rounded-full transition-colors ${
-                  !isYearly ? "text-white" : "text-gray-500"
+                  !isYearly ? "text-white" : "text-[#062424]/60"
                 }`}
               >
                 Monthly
@@ -131,7 +131,7 @@ export const Pricing = () => {
               <button
                 onClick={() => setIsYearly(true)}
                 className={`relative z-10 px-8 py-2 rounded-full transition-colors ${
-                  isYearly ? "text-white" : "text-gray-500"
+                  isYearly ? "text-[#062424]" : "text-[#062424]/60"
                 }`}
               >
                 Yearly
@@ -160,16 +160,22 @@ export const Pricing = () => {
                 transition: { duration: 0.2 }
               }}
               className={twMerge(
-                "card relative cursor-pointer",
-                inverse === true && "border-[#2D2654] bg-[#2D2654] text-white"
+                "card relative cursor-pointer backdrop-blur-lg",
+                inverse === true && "border-[#062424] bg-[#062424] text-white",
+                !inverse && "hover:border-[#062424] bg-white/90"
               )}
+              style={{
+                boxShadow: inverse 
+                  ? '0 8px 32px 0 rgba(6, 36, 36, 0.2)' 
+                  : '0 8px 32px 0 rgba(6, 36, 36, 0.1)'
+              }}
             >
               {popular && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
-                  className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#2D2654] text-white px-4 py-1 rounded-full text-sm"
+                  className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#062424] text-white px-4 py-1 rounded-full text-sm font-medium"
                 >
                   Most Popular
                 </motion.div>
@@ -186,7 +192,8 @@ export const Pricing = () => {
               </div>
               <div className="flex items-baseline gap-1 mt-[30px]">
                 <span className="text-4xl font-bold tracking-tighter leading-none">
-                  $<AnimatedNumber
+                  <span className="text-2xl">ICP</span>{" "}
+                  <AnimatedNumber
                     value={monthlyPrice ? (isYearly ? yearlyPrice : monthlyPrice) : 0}
                   />
                 </span>
@@ -213,7 +220,7 @@ export const Pricing = () => {
               <ul className="flex flex-col gap-5 mt-8">
                 {features.map((feature) => (
                   <li key={feature} className="text-sm flex items-center gap-4">
-                    <CheckIcon className="h-6 w-6" />
+                    <CheckIcon className="h-6 w-6 text-[#062424]" />
                     <span>{feature}</span>
                   </li>
                 ))}

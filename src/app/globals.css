@@ -18,9 +18,9 @@
 
   .btn-primary {
 
-    @apply bg-[#062424] text-white relative overflow-hidden;
+    @apply bg-[#666ed2] text-white relative overflow-hidden;
 
-    box-shadow: 0 0 15px rgba(6, 36, 36, 0.5);
+    box-shadow: 0 0 15px rgba(102, 110, 210, 0.5);
 
   }
 
@@ -54,7 +54,7 @@
 
     content: '';
 
-    @apply absolute inset-[2px] bg-[#062424] rounded-full;
+    @apply absolute inset-[2px] bg-[#666ed2] rounded-full;
 
     z-index: 1;
 
@@ -92,7 +92,7 @@
 
   .btn-text {
 
-    @apply text-[#062424] bg-transparent hover:bg-[#062424]/5 transition-colors;
+    @apply text-[#666ed2] bg-transparent hover:bg-[#666ed2]/5 transition-colors;
 
   }
 

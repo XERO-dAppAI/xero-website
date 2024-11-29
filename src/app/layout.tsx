@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { Syne, Raleway } from "next/font/google";
+import { Syne, Raleway, Krona_One } from "next/font/google";
 
 import "./globals.css";
 
@@ -25,6 +25,18 @@ const raleway = Raleway({
   subsets: ["latin"],
 
   variable: '--font-raleway'
+
+});
+
+
+
+const kronaOne = Krona_One({ 
+
+  weight: '400',
+
+  subsets: ["latin"],
+
+  variable: '--font-krona'
 
 });
 
@@ -65,6 +77,8 @@ export default function RootLayout({
         raleway.variable, 
 
         syne.variable,
+
+        kronaOne.variable,
 
         "antialiased bg-[#EAEEFE] font-raleway"
 

@@ -40,7 +40,7 @@ export const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="pt-8 pb-20 md:pt-5 md:pb-10 bg-gradient-to-br from-white via-[#F5FFF5] to-[#E8FFE8] overflow-x-clip"
+      className="pt-8 pb-20 md:pt-5 md:pb-10 bg-gradient-to-br from-white via-[#F5F5FF] to-[#E8EBFF] overflow-x-clip"
     >
       <div className="container">
         <div className="md:flex items-center">
@@ -65,7 +65,7 @@ export const Hero = () => {
                   <AnimatePresence mode="wait">
                     <motion.span
                       key={words[currentWordIndex]}
-                      className="block text-[#062424]"
+                      className="block text-[#666ed2]"
                       initial={{ y: "100%" }}
                       animate={{ y: 0 }}
                       exit={{ y: "-100%" }}

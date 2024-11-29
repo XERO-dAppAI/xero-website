@@ -2,10 +2,6 @@
 
 import productImage from "@/assets/product-image.png";
 
-import pyramidImage from "@/assets/pyramid.png";
-
-import tubeImage from "@/assets/tube.png";
-
 import Image from "next/image";
 
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
@@ -152,135 +148,7 @@ export const ProductShowcase = () => {
 
             </motion.button>
 
-            <motion.div
-
-              className="absolute inset-0 rounded-full border-2 border-white/60"
-
-              initial={{ opacity: 0.4, scale: 1 }}
-
-              animate={{
-
-                opacity: [0.4, 0],
-
-                scale: [1, 1.8],
-
-              }}
-
-              transition={{
-
-                duration: 2,
-
-                repeat: Infinity,
-
-                ease: "easeOut",
-
-                times: [0, 1]
-
-              }}
-
-            />
-
-            <motion.div
-
-              className="absolute inset-0 rounded-full border-2 border-white/60"
-
-              initial={{ opacity: 0.4, scale: 1 }}
-
-              animate={{
-
-                opacity: [0.4, 0],
-
-                scale: [1, 1.8],
-
-              }}
-
-              transition={{
-
-                duration: 2,
-
-                repeat: Infinity,
-
-                ease: "easeOut",
-
-                delay: 0.5,
-
-                times: [0, 1]
-
-              }}
-
-            />
-
-            <motion.div
-
-              className="absolute inset-0 rounded-full border-2 border-white/60"
-
-              initial={{ opacity: 0.4, scale: 1 }}
-
-              animate={{
-
-                opacity: [0.4, 0],
-
-                scale: [1, 1.8],
-
-              }}
-
-              transition={{
-
-                duration: 2,
-
-                repeat: Infinity,
-
-                ease: "easeOut",
-
-                delay: 1,
-
-                times: [0, 1]
-
-              }}
-
-            />
-
           </motion.div>
-
-          <motion.img
-
-            src={pyramidImage.src}
-
-            alt="Pyramid Image"
-
-            height={262}
-
-            width={262}
-
-            className="hidden md:block absolute -right-36 -top-32"
-
-            style={{
-
-              translateY,
-
-            }}
-
-          />
-
-          <motion.img
-
-            src={tubeImage.src}
-
-            alt="Tube image"
-
-            height={248}
-
-            width={248}
-
-            className="hidden md:block absolute bottom-24 -left-36"
-
-            style={{
-
-              translateY,
-
-            }}
-
-          />
 
         </div>
 
