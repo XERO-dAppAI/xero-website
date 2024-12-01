@@ -1,414 +1,218 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
 
-
-
-@layer components {
-
-  .btn {
-
-    @apply px-6 py-3 rounded-full font-medium inline-flex items-center justify-center tracking-tight font-syne relative;
-
-  }
-
-
-
-  .btn-primary {
-
-    @apply bg-[#666ed2] text-white relative overflow-hidden;
-
-    box-shadow: 0 0 15px rgba(102, 110, 210, 0.5);
-
-  }
-
-
-
-  .btn-primary::before {
-
-    content: '';
-
-    @apply absolute inset-0;
-
-    background: conic-gradient(
-
-      from 0deg,
-
-      transparent 0%,
-
-      rgba(255, 255, 255, 0.8) 15%,
-
-      transparent 30%
-
-    );
-
-    animation: rotateGlow 2s linear infinite;
-
-  }
-
-
-
-  .btn-primary::after {
-
-    content: '';
-
-    @apply absolute inset-[2px] bg-[#666ed2] rounded-full;
-
-    z-index: 1;
-
-  }
-
-
-
-  .btn-primary span {
-
-    @apply relative z-10;
-
-  }
-
-
-
-  @keyframes rotateGlow {
-
-    from {
-
-      transform: rotate(0deg);
-
-    }
-
-
-
-    to {
-
-      transform: rotate(360deg);
-
-    }
-
-  }
-
-
-
-  .btn-text {
-
-    @apply text-[#666ed2] bg-transparent hover:bg-[#666ed2]/5 transition-colors;
-
-  }
-
-
-
-  .logo-ticker-image {
-
-    @apply h-8 w-auto;
-
-  }
-
-
-
-  .tag {
-
-    @apply text-sm inline-flex border border-[#666ed2]/20 px-3 py-1 rounded-lg tracking-tight font-syne text-[#666ed2];
-
-  }
-
-
-
-  .section-title {
-
-    @apply text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter text-[#2D2654] font-syne;
-
-  }
-
-
-
-  .section-description {
-
-    @apply text-center text-[22px] leading-[30px] tracking-tight text-gray-700 font-raleway;
-
-  }
-
-
-
-  .section-heading {
-
-    @apply max-w-[540px] mx-auto;
-
-  }
-
-
-
-  .card {
-
-    @apply p-10 border border-[#222222]/10 rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full;
-
-  }
-
-
-
+@layer base {
   h1, h2, h3, h4, h5, h6 {
-
     @apply font-syne;
-
   }
-
-
-
-  @keyframes glow {
-
-    0% {
-
-      opacity: 0.5;
-
-      transform: scale(0.95);
-
-    }
-
-
-
-    50% {
-
-      opacity: 0.8;
-
-      transform: scale(1.05);
-
-    }
-
-
-
-    100% {
-
-      opacity: 0.5;
-
-      transform: scale(0.95);
-
-    }
-
-  }
-
-
-
-  .animate-glow {
-
-    animation: glow 2s infinite;
-
-  }
-
-
-
-  .feature-card::before {
-
-    content: '';
-
-    @apply absolute inset-0;
-
-    background: conic-gradient(
-
-      from 0deg,
-
-      transparent 0%,
-
-      rgba(0, 0, 0, 0.2) 15%,
-
-      transparent 30%
-
-    );
-
-    animation: rotateGlow 3s linear infinite;
-
-  }
-
-
-
-  .feature-card::after {
-
-    content: '';
-
-    @apply absolute inset-[2px] rounded-3xl;
-
-    background: inherit;
-
-    z-index: 1;
-
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
-
-  }
-
-
-
-  .btn-pricing-highlight {
-
-    @apply bg-white text-[#2D2654] relative overflow-hidden;
-
-    box-shadow: 0 0 25px rgba(45, 38, 84, 0.5);
-
-  }
-
-
-
-  .btn-pricing-highlight::before {
-
-    content: '';
-
-    @apply absolute inset-0;
-
-    background: conic-gradient(
-
-      from 0deg,
-
-      transparent 0%,
-
-      rgba(45, 38, 84, 0.8) 15%,
-
-      transparent 30%
-
-    );
-
-    animation: rotateGlow 3s linear infinite;
-
-  }
-
-
-
-  .btn-pricing-highlight::after {
-
-    content: '';
-
-    @apply absolute inset-[2px] bg-white rounded-full;
-
-    z-index: 1;
-
-  }
-
-
-
-  .btn-pricing-highlight span {
-
-    @apply relative z-10;
-
-  }
-
-
-
-  .btn-testimonial {
-
-    @apply inline-block rounded-full bg-gray-200 px-6 py-1 text-sm font-medium text-gray-600 transition-colors duration-300 hover:bg-[#666ed2] hover:text-white cursor-pointer font-syne;
-
-  }
-
-
-
-  .btn-dark {
-
-    @apply bg-[#2D2654] text-white relative overflow-hidden;
-
-    box-shadow: 0 0 15px rgba(45, 38, 84, 0.5);
-
-  }
-
-
-
-  .btn-dark::before {
-
-    content: '';
-
-    @apply absolute inset-0;
-
-    background: conic-gradient(
-
-      from 0deg,
-
-      transparent 0%,
-
-      rgba(255, 255, 255, 0.8) 15%,
-
-      transparent 30%
-
-    );
-
-    animation: rotateGlow 2s linear infinite;
-
-  }
-
-
-
-  .btn-dark::after {
-
-    content: '';
-
-    @apply absolute inset-[2px] bg-[#2D2654] rounded-full;
-
-    z-index: 1;
-
-  }
-
-
-
-  .btn-dark span {
-
-    @apply relative z-10;
-
-  }
-
-
-
-  .btn-header-glow {
-
-    @apply px-8 py-3 bg-[#062424] text-white rounded-full font-medium text-sm tracking-wider relative overflow-hidden;
-
-    box-shadow: 0 0 15px rgba(6, 36, 36, 0.5);
-
-  }
-
-
-
-  .btn-header-glow::before {
-
-    content: '';
-
-    @apply absolute inset-0;
-
-    background: conic-gradient(
-
-      from 0deg,
-
-      transparent 0%,
-
-      rgba(255, 255, 255, 0.8) 15%,
-
-      transparent 30%
-
-    );
-
-    animation: rotateGlow 2s linear infinite;
-
-  }
-
-
-
-  .btn-header-glow::after {
-
-    content: '';
-
-    @apply absolute inset-[2px] bg-[#062424] rounded-full;
-
-    z-index: 1;
-
-  }
-
-
-
-  .btn-header-glow span {
-
-    @apply relative z-10;
-
-  }
-
 }
 
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-full font-medium inline-flex items-center justify-center tracking-tight font-syne relative;
+  }
+
+  .btn-primary {
+    @apply bg-[#666ed2] text-white relative overflow-hidden;
+    box-shadow: 0 0 15px rgba(102, 110, 210, 0.5);
+  }
+
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.8) 15%,
+      transparent 30%
+    );
+    animation: rotateGlow 2s linear infinite;
+  }
+
+  .btn-primary::after {
+    content: '';
+    @apply absolute inset-[2px] bg-[#666ed2] rounded-full;
+    z-index: 1;
+  }
+
+  .btn-primary span {
+    @apply relative z-10;
+  }
+
+  @keyframes rotateGlow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .btn-text {
+    @apply text-[#666ed2] bg-transparent hover:bg-[#666ed2]/5 transition-colors;
+  }
+
+  .logo-ticker-image {
+    @apply h-8 w-auto;
+  }
+
+  .tag {
+    @apply text-sm inline-flex border border-[#666ed2]/20 px-3 py-1 rounded-lg tracking-tight font-syne text-[#666ed2];
+  }
+
+  .section-title {
+    @apply text-center text-xl sm:text-2xl md:text-[42px] lg:text-[48px] leading-tight md:leading-[50px] lg:leading-[54px] font-bold tracking-tighter text-[#2D2654] font-syne;
+  }
+
+  .section-description {
+    @apply text-center text-base sm:text-lg md:text-[18px] lg:text-[20px] leading-relaxed tracking-tight text-gray-700 font-raleway;
+  }
+
+  .section-heading {
+    @apply max-w-[540px] mx-auto px-4;
+  }
+
+  .card {
+    @apply p-6 sm:p-7 md:p-8 border border-[#222222]/10 rounded-xl sm:rounded-2xl shadow-[0_4px_8px_#EAEAEA] max-w-xs w-full mx-2 sm:mx-3;
+  }
+
+  @keyframes glow {
+    0% {
+      opacity: 0.5;
+      transform: scale(0.95);
+    }
+
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+
+    100% {
+      opacity: 0.5;
+      transform: scale(0.95);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 2s infinite;
+  }
+
+  .feature-card::before {
+    content: '';
+    @apply absolute inset-0;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.2) 15%,
+      transparent 30%
+    );
+    animation: rotateGlow 3s linear infinite;
+  }
+
+  .feature-card::after {
+    content: '';
+    @apply absolute inset-[2px] rounded-3xl;
+    background: inherit;
+    z-index: 1;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-pricing-highlight {
+    @apply bg-white text-[#2D2654] relative overflow-hidden;
+    box-shadow: 0 0 25px rgba(45, 38, 84, 0.5);
+  }
+
+  .btn-pricing-highlight::before {
+    content: '';
+    @apply absolute inset-0;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0%,
+      rgba(45, 38, 84, 0.8) 15%,
+      transparent 30%
+    );
+    animation: rotateGlow 3s linear infinite;
+  }
+
+  .btn-pricing-highlight::after {
+    content: '';
+    @apply absolute inset-[2px] bg-white rounded-full;
+    z-index: 1;
+  }
+
+  .btn-pricing-highlight span {
+    @apply relative z-10;
+  }
+
+  .btn-testimonial {
+    @apply inline-block rounded-full bg-gray-200 px-6 py-1 text-sm font-medium text-gray-600 transition-colors duration-300 hover:bg-[#666ed2] hover:text-white cursor-pointer font-syne;
+  }
+
+  .btn-dark {
+    @apply bg-[#2D2654] text-white relative overflow-hidden;
+    box-shadow: 0 0 15px rgba(45, 38, 84, 0.5);
+  }
+
+  .btn-dark::before {
+    content: '';
+    @apply absolute inset-0;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.8) 15%,
+      transparent 30%
+    );
+    animation: rotateGlow 2s linear infinite;
+  }
+
+  .btn-dark::after {
+    content: '';
+    @apply absolute inset-[2px] bg-[#2D2654] rounded-full;
+    z-index: 1;
+  }
+
+  .btn-dark span {
+    @apply relative z-10;
+  }
+
+  .btn-header-glow {
+    @apply px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 bg-[#062424] text-white rounded-full font-medium text-[11px] sm:text-[12px] md:text-[13px] tracking-wider relative overflow-hidden;
+    box-shadow: 0 0 10px rgba(6, 36, 36, 0.25);
+  }
+
+  .btn-header-glow::before {
+    content: '';
+    @apply absolute inset-0;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.8) 15%,
+      transparent 30%
+    );
+    animation: rotateGlow 2s linear infinite;
+  }
+
+  .btn-header-glow::after {
+    content: '';
+    @apply absolute inset-[2px] bg-[#062424] rounded-full;
+    z-index: 1;
+  }
+
+  .btn-header-glow span {
+    @apply relative z-10;
+  }
+}
 
 .cursor-none, .cursor-none * {
   cursor: none !important;
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto px-4 sm:px-5 md:px-6 max-w-[1100px];
+  }
 }
 
 

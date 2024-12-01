@@ -1,9 +1,7 @@
 'use client';
 
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import glass2 from "@/assets/glass2.png";
 
 const HowItWorks = () => {
   const [activeNumber, setActiveNumber] = useState(1);
@@ -19,7 +17,7 @@ const HowItWorks = () => {
   const getNumberClass = (number: number) => {
     return `absolute right-8 bottom-6 text-[100px] font-bold leading-none transition-all duration-1000
       ${activeNumber === number 
-        ? 'text-[#c9b759] opacity-30 scale-110 drop-shadow-[0_0_30px_rgba(201,183,89,0.7)]'
+        ? 'text-[#5f9898] opacity-30 scale-110 drop-shadow-[0_0_30px_rgba(95,152,152,0.7)]'
         : 'text-[#666666]/[0.03]'
       }`;
   };
@@ -113,44 +111,7 @@ const HowItWorks = () => {
             </motion.div>
           ))}
 
-          <div className="hidden md:block">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ 
-                opacity: 0.7,
-                y: [0, -15, 0],
-                x: [0, 10, 0],
-                rotate: [-2, 2, -2],
-              }}
-              transition={{ 
-                opacity: { duration: 1, delay: 0.5 },
-                y: {
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                },
-                x: {
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                },
-                rotate: {
-                  duration: 7,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }
-              }}
-              className="absolute right-20 bottom-32"
-            >
-              <Image
-                src={glass2}
-                alt="Glass decoration"
-                width={300}
-                height={300}
-                className="object-contain"
-              />
-            </motion.div>
-          </div>
+          <div className="hidden md:block" />
         </div>
       </div>
     </section>

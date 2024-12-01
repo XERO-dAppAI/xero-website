@@ -1,16 +1,15 @@
 import { Header } from "@/sections/Header";
 import { Xero } from "@/sections/xero";
 import { LogoTicker } from "@/sections/LogoTicker";
-import { Hero } from "@/sections/Hero";
 import { ProductShowcase } from "@/sections/ProductShowcase";
-import { Features } from "@/sections/Features";
-import { Pricing } from "@/sections/Pricing";
+import { SecurityFeatures } from "@/sections/SecurityFeatures";
+import { FlowingText } from "@/sections/FlowingText";
+import { Integrations } from "@/sections/Integrations";
 import { HowItWorks } from "@/sections/HowItWorks";
-import { Analytics } from "@/sections/Analytics";
-import { Testimonials } from "@/sections/Testimonials";
+import { Features } from "@/sections/Features";
 import { CallToAction } from "@/sections/CallToAction";
 import { Footer } from "@/sections/Footer";
-import { Integrations } from "@/sections/Integrations";
+
 
 export default function Home() {
   return (
@@ -18,16 +17,16 @@ export default function Home() {
       <Header />
       <Xero />
       <LogoTicker />
+      <ProductShowcase />
       <Integrations /> 
       <HowItWorks />
-      <ProductShowcase /> 
       <Features />
-      <Pricing /> 
-      <Analytics />
-      <Testimonials />
+      <FlowingText />
+      <SecurityFeatures />
       <CallToAction />
       <Footer />
-      <Hero /> 
+
+      
     </>
   );
 }

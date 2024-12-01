@@ -20,53 +20,64 @@ export const CallToAction = () => {
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className="bg-gradient-to-b from-white to-[#D2DCFF] py-24 overflow-x-clip"
-    >
+    <section className="bg-gradient-to-b from-white to-[#e6f2f2] py-24 overflow-x-clip">
       <div className="container">
         <div className="section-heading relative">
-          <h2 className="section-title">Sign up for free today</h2>
-          <p className="section-description mt-5">
+          <h2 className="section-title text-[#062424]">Sign up for free today</h2>
+          <p className="section-description mt-5 text-[#062424]/80">
             Join The Xero Community on all of our social media platforms
             @Xero For more information
           </p>
-          <motion.img
-            src={starImage.src}
-            alt="Star Image"
-            width={360}
-            className="absolute -left-[350px] -top-[137px]"
-            style={{
-              translateY,
-            }}
-          />
-          <motion.img
-            src={springImage.src}
-            alt="Spring Image"
-            width={360}
-            className="absolute -right-[331px] -top-[19px]"
-            style={{
-              translateY,
-            }}
-          />
         </div>
-        <div className="flex gap-2 mt-10 justify-center">
+        <div className="flex gap-6 mt-10 justify-center">
           <motion.button 
-            className="btn btn-primary"
+            className="group relative px-8 py-3 bg-[#062424]/90 text-white rounded-xl font-medium overflow-hidden"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
             onClick={() => window.open('https://twitter.com/xerow_ai', '_blank', 'noopener,noreferrer')}
+            style={{
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)',
+              boxShadow: '0 8px 32px 0 rgba(6, 36, 36, 0.2)',
+              border: '1px solid rgba(255, 255, 255, 0.18)',
+            }}
           >
-            <span>Follow Us On X</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-windshield" />
+            <div className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity duration-300"
+              style={{
+                background: 'linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
+              }}
+            />
+            <span className="relative z-10 flex items-center gap-2">
+              Follow Us On X
+              <ArrowRight className="w-4 h-4" />
+            </span>
           </motion.button>
-          <button 
+
+          <motion.button 
             onClick={handleLearnMore}
-            className="btn btn-text gap-1 hover:text-[#666ed2] transition-colors px-6 py-3"
+            className="group relative px-8 py-3 bg-white/10 text-[#062424] rounded-xl font-medium overflow-hidden"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            style={{
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)',
+              boxShadow: '0 8px 32px 0 rgba(6, 36, 36, 0.1)',
+              border: '1px solid rgba(6, 36, 36, 0.18)',
+            }}
           >
-            <span>Learn more</span>
-            <ArrowRight className="h-5 w-5" />
-          </button>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#062424]/5 to-transparent animate-windshield" />
+            <div className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity duration-300"
+              style={{
+                background: 'linear-gradient(45deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%)',
+              }}
+            />
+            <span className="relative z-10 flex items-center gap-2">
+              Learn more
+              <ArrowRight className="w-4 h-4" />
+            </span>
+          </motion.button>
         </div>
       </div>
     </section>
