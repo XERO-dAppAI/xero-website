@@ -7,9 +7,8 @@ interface Card {
   title: string;
   subtitle: string;
   features: string[];
-  monthlyPrice?: number;
-  yearlyPrice?: number;
-  price?: string;
+  monthlyPrice: number;
+  yearlyPrice: number;
   bgColor: string;
 }
 
@@ -39,19 +38,7 @@ const FlowingText = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isYearly, setIsYearly] = useState(false);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % cards.length);
-    }, 6000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const getICPPrice = (usdPrice: number) => {
-    return (usdPrice / 12).toFixed(2); // Converting USD to ICP at 1 ICP = $12
-  };
-
-  const cards = [
+  const cards: Card[] = [
     {
       title: "XERO Basic",
       subtitle: "Perfect for small businesses",
@@ -98,6 +85,18 @@ const FlowingText = () => {
       bgColor: "#062424",
     }
   ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % cards.length);
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, [cards.length]);
+
+  const getICPPrice = (usdPrice: number) => {
+    return (usdPrice / 12).toFixed(2);
+  };
 
   return (
     <section className="bg-white py-6 relative overflow-hidden min-h-screen">
@@ -168,22 +167,18 @@ const FlowingText = () => {
                         className="text-3xl font-bold font-krona"
                         style={{ color: card.bgColor === '#f6fcfb' ? '#1a6363' : '#FFFFFF' }}
                       >
-                        {card.price === "Custom" ? (
-                          "Custom"
-                        ) : (
-                          <motion.div
-                            key={isYearly ? 'yearly' : 'monthly'}
-                            className="flex items-baseline gap-2"
-                          >
-                            <AnimatedPrice 
-                              value={isYearly ? card.yearlyPrice! : card.monthlyPrice!} 
-                            />
-                            <span className="text-lg font-normal opacity-80">ICP</span>
-                            <span className="text-base font-normal opacity-80">
-                              /{isYearly ? 'year' : 'month'}
-                            </span>
-                          </motion.div>
-                        )}
+                        <motion.div
+                          key={isYearly ? 'yearly' : 'monthly'}
+                          className="flex items-baseline gap-2"
+                        >
+                          <AnimatedPrice 
+                            value={isYearly ? card.yearlyPrice : card.monthlyPrice} 
+                          />
+                          <span className="text-lg font-normal opacity-80">ICP</span>
+                          <span className="text-base font-normal opacity-80">
+                            /{isYearly ? 'year' : 'month'}
+                          </span>
+                        </motion.div>
                       </div>
 
                       <ul className="space-y-4 font-raleway">

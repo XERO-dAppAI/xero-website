@@ -1,5 +1,5 @@
 import { Header } from "@/sections/Header";
-import { Xero } from "@/sections/xero";
+import { Xero } from "@/sections/Xero";
 import { LogoTicker } from "@/sections/LogoTicker";
 import { ProductShowcase } from "@/sections/ProductShowcase";
 import { SecurityFeatures } from "@/sections/SecurityFeatures";

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useAnimate } from "framer-motion";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { 
   FaLink, 
   FaWater, 
@@ -13,7 +13,31 @@ import {
 
 export const Features = () => {
   const [activeCard, setActiveCard] = useState(0);
-  const controls = Array(6).fill(null).map(() => useAnimate());
+  
+  // Create individual hooks for each control
+  const [scope1, animate1] = useAnimate();
+  const [scope2, animate2] = useAnimate();
+  const [scope3, animate3] = useAnimate();
+  const [scope4, animate4] = useAnimate();
+  const [scope5, animate5] = useAnimate();
+  const [scope6, animate6] = useAnimate();
+
+  // Memoize the controls array
+  const controls = useMemo(() => [
+    { scope: scope1, animate: animate1 },
+    { scope: scope2, animate: animate2 },
+    { scope: scope3, animate: animate3 },
+    { scope: scope4, animate: animate4 },
+    { scope: scope5, animate: animate5 },
+    { scope: scope6, animate: animate6 }
+  ], [
+    scope1, animate1,
+    scope2, animate2,
+    scope3, animate3,
+    scope4, animate4,
+    scope5, animate5,
+    scope6, animate6
+  ]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,7 +50,7 @@ export const Features = () => {
   useEffect(() => {
     const animateIcons = async () => {
       for (let i = 0; i < controls.length; i++) {
-        const [scope, animate] = controls[i];
+        const { scope, animate } = controls[i];
         
         await animate(scope.current, 
           { 
@@ -44,7 +68,8 @@ export const Features = () => {
     };
 
     animateIcons();
-  }, []);
+    return () => {};
+  }, [controls]);
 
   const coinFeatures = [
     {
@@ -127,7 +152,7 @@ export const Features = () => {
 
               {/* Card content */}
               <motion.div 
-                ref={controls[index][0]}
+                ref={controls[index].scope}
                 className="relative p-3 rounded-xl w-fit mb-4 overflow-hidden"
                 style={{
                   background: 'rgba(95, 152, 152, 0.1)',

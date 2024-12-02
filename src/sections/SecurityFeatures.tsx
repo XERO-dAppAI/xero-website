@@ -9,18 +9,25 @@ import banner2 from "@/assets/banner2.png";
 import banner3 from "@/assets/banner3.png";
 import { FaXTwitter, FaLinkedin } from 'react-icons/fa6';
 
+type StaticImageData = {
+  src: string;
+  height: number;
+  width: number;
+  blurDataURL?: string;
+};
+
 export const SecurityFeatures = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const founders = [
     {
       image: banner1,
-      name: "Janice Mugure",
+      name: "Janice Gathoga",
       title: "Team Lead of XERO",
       skills: [
         { icon: <Code className="w-5 h-5" />, text: "Frontend Developer" },
         { icon: <Palette className="w-5 h-5" />, text: "Graphic Designer" },
-        { icon: <Terminal className="w-5 h-5" />, text: "Software Developer" }
+        { icon: <Terminal className="w-5 h-5" />, text: "Blockchain Developer" }
       ]
     },
     {
@@ -53,20 +60,42 @@ export const SecurityFeatures = () => {
   ];
 
   useEffect(() => {
-    // Start the rotation after initial animations
+    // Increased rotation time to 15s (from 12s)
     const timer = setTimeout(() => {
       const interval = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % founders.length);
-      }, 12000); // 12s for each full cycle
+      }, 15000); // 15s for each full cycle
       
       return () => clearInterval(interval);
     }, 6000); // Wait for first slide's animations to complete
 
     return () => clearTimeout(timer);
+  }, [founders.length]);
+
+  // Preload all images
+  useEffect(() => {
+    founders.forEach(founder => {
+      const img = document.createElement('img');
+      img.src = (founder.image as StaticImageData).src;
+    });
   }, []);
 
   return (
     <section className="bg-white py-24">
+      {/* Hidden preload images */}
+      <div className="hidden">
+        {founders.map((founder, index) => (
+          <Image
+            key={index}
+            src={founder.image}
+            alt=""
+            width={1}
+            height={1}
+            priority={true}
+          />
+        ))}
+      </div>
+
       <div className="container">
         <div className="grid md:grid-cols-[1fr,1fr] gap-24 items-center">
           {/* Left side - Text Content */}
@@ -105,7 +134,10 @@ export const SecurityFeatures = () => {
                   alt={founders[currentSlide].name}
                   fill
                   className="object-cover"
-                  priority
+                  priority={true}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={90}
+                  loading="eager"
                 />
                 {/* Overlay with founder details */}
                 <motion.div 
