@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useRef, useState, useEffect } from "react";
 import { Play } from 'lucide-react';
 import Image from "next/image";
-import curve from "@/assets/curve.png";
 
 export const ProductShowcase = () => {
   const [currentWord, setCurrentWord] = useState(0);
@@ -120,42 +119,6 @@ export const ProductShowcase = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
-        </motion.div>
-      </div>
-
-      {/* Curved corner decoration with animation */}
-      <div className="absolute -bottom-5 right-10 w-[150px] overflow-hidden pointer-events-none z-20">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          style={{
-            transform: 'rotate(180deg)'
-          }}
-        >
-          <motion.div
-            animate={{ 
-              rotate: [-2, 2, -2],
-              scale: [1, 1.02, 1],
-            }}
-            transition={{ 
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-            <Image
-              src={curve}
-              alt="Corner decoration"
-              width={150}
-              height={150}
-              className="w-full h-auto"
-              style={{
-                filter: 'drop-shadow(0 -5px 15px rgba(6,36,36,0.08))',
-                transform: 'scaleX(-1)',
-              }}
-            />
-          </motion.div>
         </motion.div>
       </div>
     </motion.section>
