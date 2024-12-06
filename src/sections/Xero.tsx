@@ -230,9 +230,8 @@ export const Xero = () => {
                   className="group px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 bg-white text-[#062424] rounded-[8px] sm:rounded-[10px] font-medium text-[12px] sm:text-[13px] md:text-[14px] tracking-wider border border-[#062424] relative overflow-hidden flex items-center gap-1.5 sm:gap-2"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => window.open('https://slklx-vqaaa-aaaaj-qnexq-cai.icp0.io/', '_blank', 'noopener,noreferrer')}
+                  onClick={() => window.open('https://janice-mugure.gitbook.io/xero', '_blank', 'noopener,noreferrer')}
                 >
-                  {/* Continuous windshield effect overlay */}
                   <div className="absolute inset-0 w-full h-full">
                     <div 
                       className="absolute inset-0 transform -translate-x-full animate-windshield bg-gradient-to-r from-transparent via-[#062424]/10 to-transparent"

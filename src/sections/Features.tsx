@@ -74,33 +74,33 @@ export const Features = () => {
   const coinFeatures = [
     {
       icon: <FaLink className="w-6 h-6 text-[#5f9898] group-hover:text-white transition-colors duration-300" />,
-      title: "IRC-2 Standard",
-      description: "Built on Internet Computer's robust IRC-2 standard, ensuring secure and seamless transactions."
+      title: "ICPHubs Network & Team",
+      description: <span><span className="text-xl font-bold">5%</span> goes to ICPHubs for partnerships, and <span className="text-xl font-bold">5%</span> is reserved for the team to ensure project success.</span>
     },
     {
       icon: <FaWater className="w-6 h-6 text-[#5f9898] group-hover:text-white transition-colors duration-300" />,
-      title: "Liquidity Pool",
-      description: "40% of XEROW COIN allocated to liquidity pools, maintaining strong market stability."
+      title: "Airdrops & Marketing",
+      description: <span><span className="text-xl font-bold">5%</span> is allocated for airdrops to grow our community, and <span className="text-xl font-bold">10%</span> is for marketing to increase visibility.</span>
     },
     {
       icon: <FaSeedling className="w-6 h-6 text-[#5f9898] group-hover:text-white transition-colors duration-300" />,
-      title: "Eco Rewards",
-      description: "30% dedicated to rewarding businesses achieving verified food waste reduction targets."
+      title: "Development & Private Sale",
+      description: <span><span className="text-xl font-bold">15%</span> is dedicated to platform development, and <span className="text-xl font-bold">10%</span> is raised from private investors.</span>
     },
     {
       icon: <FaLock className="w-6 h-6 text-[#5f9898] group-hover:text-white transition-colors duration-300" />,
-      title: "Vesting Schedule",
-      description: "Strategic coin release schedule ensuring long-term ecosystem sustainability."
+      title: "Public Sale & Treasury",
+      description: <span><span className="text-xl font-bold">20%</span> is for the public sale to expand access, while <span className="text-xl font-bold">10%</span> is reserved for the treasury.</span>
     },
     {
       icon: <FaChartBar className="w-6 h-6 text-[#5f9898] group-hover:text-white transition-colors duration-300" />,
-      title: "Governance",
-      description: "XEROW COIN holders shape protocol decisions through decentralized voting."
+      title: "DEX Liquidity & Growth Incentives",
+      description: <span><span className="text-xl font-bold">14%</span> ensures liquidity on decentralized exchanges, and <span className="text-xl font-bold">6%</span> is for rewarding early adopters.</span>
     },
     {
       icon: <FaRecycle className="w-6 h-6 text-[#5f9898] group-hover:text-white transition-colors duration-300" />,
-      title: "Burn Mechanism",
-      description: "Automatic coin burn tied to platform milestones, increasing scarcity over time."
+      title: "XEROW Coin Utility",
+      description: <span>XEROW Coin powers Xero-League rewards and will be used for marketplace payments after launch.</span>
     }
   ];
 
@@ -114,7 +114,7 @@ export const Features = () => {
             </div>
           </div>
           <h2 className="section-title mt-5 text-[#062424]">
-            Sneak Peak Of Xerow Coin
+            Sneak Peak Of XEROW Coin
           </h2>
           <p className="section-description mt-5">
             A token built on the Internet Computer's IRC-2 standard.

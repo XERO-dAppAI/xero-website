@@ -1,3 +1,5 @@
+'use client';
+
 import ArrowRight from "@/assets/arrow-right.svg";
 import Logo from "@/assets/logosaas.png";
 import Image from "next/image";
@@ -21,8 +23,11 @@ export const Header = () => {
             </div>
             <MenuIcon className="h-4 w-4 sm:h-4.5 sm:w-4.5 md:h-5 md:w-5 md:hidden" />
             <nav className="hidden md:flex items-center mr-1 sm:mr-1.5 md:mr-2">
-              <button className="btn-header-glow">
-                <span>Get for free</span>
+              <button 
+                className="btn-header-glow"
+                onClick={() => window.open('https://slklx-vqaaa-aaaaj-qnexq-cai.icp0.io/', '_blank', 'noopener,noreferrer')}
+              >
+                <span>Launch XERO dApp</span>
               </button>
             </nav>
           </div>

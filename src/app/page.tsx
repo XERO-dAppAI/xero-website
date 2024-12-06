@@ -9,7 +9,8 @@ import { HowItWorks } from "@/sections/HowItWorks";
 import { Features } from "@/sections/Features";
 import { CallToAction } from "@/sections/CallToAction";
 import { Footer } from "@/sections/Footer";
-
+import { Gaming } from "@/sections/Gaming";
+import { FAQ } from "@/sections/FAQ";
 
 export default function Home() {
   return (
@@ -20,13 +21,13 @@ export default function Home() {
       <ProductShowcase />
       <Integrations /> 
       <HowItWorks />
+      <Gaming />
       <Features />
       <FlowingText />
       <SecurityFeatures />
+      <FAQ />
       <CallToAction />
       <Footer />
-
-      
     </>
   );
 }
